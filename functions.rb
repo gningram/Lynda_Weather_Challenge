@@ -110,7 +110,7 @@ def get_readings_from_remote(type, date)
   raise "Invalid Reading Type" unless READING_TYPES.keys.include?(type)
   
   # read the remote file, split readings into an array
-  base_url = "http://lpo.dt.navy.mil/data/DM"
+  base_url = "https://lpo.dt.navy.mil/data/DM"
   url = "#{base_url}/#{date.year}/#{date.strftime("%Y_%m_%d")}/#{type}"
   puts "Retrieving: #{url}"
   data = open(url).readlines
